@@ -1,0 +1,16 @@
+---
+title: Weekly newsletter
+permalink: /newsletter/
+layout: flex
+---
+<header>
+	<h1>{{ title }}</h1>
+</header>
+
+{% include "components/mailchimp.njk" %}
+
+<hr />
+
+{% set issueslist = collections.issues | head(-200) %}
+{% set issueslistCounter = issues.posts | length %}
+{% include "components/issueslist.njk" %}

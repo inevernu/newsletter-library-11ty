@@ -1,0 +1,34 @@
+---
+title: Articles
+layout: flex
+permalink: /articles/
+---
+<h1>{{ title }}</h1>
+<p class="pageintro">Original articles (blog posts, essays), as well as some older pieces I’ve written for other publications.</p>
+
+{% set cursor = 1 %}
+{% set articleslist = collections.articles | head(-200) %}
+
+{# You can simplify this quite a bit, I wanted to have a first article displayed differently and with slighly different styling depending on the format of the header image. #}
+{% for article in articleslist | reverse %}
+{% if cursor == 1 %}
+	<div class="featured{% if article.data.imageformat == 'h' %} h{% endif %}">
+		<figure class="all"><a href="{{ article.url | url }}"><img src="/assets/images/{{ article.data.issueimage }}" /></a></figure>
+
+		<p class="pre-title"><span class="highlight">Latest</span> {{ article.date | mypostDate }}</p>
+		<h2 class="page-title"><a href="{{ article.url | url }}">{{ article.data.title }}</a></h2>
+		<div class="the-excerpt">{{ article.data.excerpt }}&nbsp;&nbsp;<a href="{{ article.url | url }}">Keep reading &rarr;</a></div>
+	</div>
+	<!-- Open entry-content to narrow the display of the rest of the issues. -->
+	<div class="entry-content">
+{% else %}
+		<div class="one-item">
+		  <p class="pre-title">{{ article.date | mypostDate }}</p>
+		  <h3 class="item-title"><a href="{{ article.url | url }}">{{ article.data.title }}</a></h3>
+		  <div class="the-excerpt">{{ article.data.excerpt }}&nbsp;&nbsp;<a href="{{ article.url | url }}">Keep reading &rarr;</a></div>
+		</div>
+{% endif %}
+{% set cursor = cursor + 1 %}
+{% endfor %}
+	</div><!-- /entry-content -->
+</div><!-- /post-inner -->

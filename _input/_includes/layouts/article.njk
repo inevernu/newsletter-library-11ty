@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-article
+---
+<article>
+	{% include "components/entry-header.njk" %}
+
+	<div class="entry-content">
+		{% if topinclude %}
+			{% include topinclude %}
+		{% endif %}
+
+		{% if imageformat == 'i' %}
+			<figure class="inline" style="margin-top: -3rem">
+				<img src="/assets/images/{{ issueimage }}" align="right" />
+				{% if imagesource != '' %}
+					<figcaption><a href="{{ imagesource }}">{{ imagesourcettl }}</a></figcaption>
+				{% endif %}
+			</figure>
+		{% endif %}
+
+		{{ content | safe }}
+	</div><!-- /entry-content -->
+
+	<div class="post-tags">
+		{% for tag in tags -%}
+	    <a href="/tags/{{ tag }}">{{ tag | replace("_", " ") }}</a>
+	  {% endfor -%}
+	</div>
+
+  <nav class="post-navigation" role="navigation">
+    <div class="nav-links">
+		  {%- set previousPost = collections.articles | getPreviousCollectionItem(page) %}
+      {%- if previousPost %}
+      <div class="nav-previous">
+        <a href="{{ previousPost.url | url }}" alt="{{ previousPost.data.title }}" rel="prev"><span class="arrow">&larr;</span>
+          <span class="post-title">{{ previousPost.data.title }}</span>
+        </a>
+      </div>
+			{% endif %}
+
+	  	{%- set nextPost = collections.articles | getNextCollectionItem(page) %}
+	  	{%- if nextPost %}
+      <div class="nav-next">
+        <a href="{{ nextPost.url | url }}" alt="{{ nextPost.data.title }}" rel="next"><span class="arrow">&rarr;</span>
+          <span class="post-title">{{ nextPost.data.title }}</span>
+        </a>
+      </div>
+			{% endif %}
+    </div>
+  </nav>
+
+	{% include "components/backlinks.njk" %}
+
+</article><!-- /sention-inner -->

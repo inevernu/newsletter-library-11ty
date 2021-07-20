@@ -1,0 +1,11 @@
+{% if backlinks.length > 0 %}
+	<h4>Notes mentioning this note</h4>
+  <div class="block-columns alignwide backlinks">
+		{% for link in backlinks %}
+		<div class="block-column backlink"{% if backlinks.length < 2 %} style="flex-basis: 25%;flex-grow:0"{% endif %}>
+			<h5><a href="{{link.url}}" class="internal-link">{{link.title}}</a></h5>
+	    {{ link.preview | markdownify | safe }}
+	  </div>
+		{% endfor %}
+	</div>
+{% endif %}

@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+layout: flex
+eleventyComputed:
+  title: Tagged “{{ tag | replace("_", " ") }}”
+permalink: /tags/{{ tag }}/
+---
+<h1>Tagged “{{ tag | replace('_', ' ') }}”</h1>
+
+{% set postslist = collections[ tag ] | reverse %}
+{% include "components/postslist.njk" %}
+
+<p style="margin-top: 5em;">See <a href="{{ '/tags/' | url }}">all tags</a>.</p>

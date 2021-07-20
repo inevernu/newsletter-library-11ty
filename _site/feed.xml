@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sentiers</title>
+  <subtitle>Making sense of a world in constant change.</subtitle>
+  <link href="https://sentiers.media/feed.xml" rel="self"/>
+  <link href="https://sentiers.media/"/>
+  <updated>2021-07-18T00:00:00Z</updated>
+  <id>https://sentiers.media/</id>
+  <author>
+    <name>Patrick Tanguay</name>
+    <email>patrick@sentiers.media</email>
+  </author>
+  
+  
+  <entry>
+    <title>Dancing with systems ⊗ Unboxing the toolkit ⊗ Cartographic evidence of invisible cities</title>
+    <link href="https://sentiers.media/dancing-with-systems-unboxing-the-toolkit--cartographic-evidence-of-invisible-cities-no-182/"/>
+    <updated>2021-07-18T00:00:00Z</updated>
+    <id>https://sentiers.media/dancing-with-systems-unboxing-the-toolkit--cartographic-evidence-of-invisible-cities-no-182/</id>
+    <content type="html">&lt;p class=&quot;boxed&quot;&gt;This is one of my own newsletter issues, left here as a demo.&lt;br /&gt;
+&lt;a href=&quot;https://sentiers.media/&quot;&gt;Subscribe to the real thing here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&quot;caps&quot;&gt;This week →&lt;/strong&gt; Dancing with systems ⊗ Unboxing the toolkit ⊗ Cartographic evidence of invisible cities ⊗ Why does utopian architecture suck? ⊗ Is content moderation a dead end? ⊗ Why NASA keeps sending squid into space&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&quot;caps&quot;&gt;A year ago →&lt;/strong&gt; The most clicked article in &lt;a href=&quot;https://sentiers.media/come-for-the-network-pay-for-the-tool-stories-on-earth-the-paradox-of-individual-creative-work-no-135/&quot;&gt;issue No.135&lt;/a&gt; was &lt;a href=&quot;https://subpixel.space/entries/come-for-the-network-pay-for-the-tool/&quot;&gt;Come for the Network, Pay for the Tool&lt;/a&gt; by Toby Shorin.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Positive sum worlds: remaking public goods ⊗ Everyone should decide how their digital data are used ⊗ Lithium landscapes</title>
+    <link href="https://sentiers.media/positive-sum-worlds-remaking-public-goods-everyone-should-decide-how-their-digital-data-are-used-not-just-tech-companies-lithium-landscapes-no-181/"/>
+    <updated>2021-07-11T00:00:00Z</updated>
+    <id>https://sentiers.media/positive-sum-worlds-remaking-public-goods-everyone-should-decide-how-their-digital-data-are-used-not-just-tech-companies-lithium-landscapes-no-181/</id>
+    <content type="html">&lt;p class=&quot;boxed&quot;&gt;This is one of my own newsletter issues, left here as a demo.&lt;br /&gt;
+&lt;a href=&quot;https://sentiers.media/&quot;&gt;Subscribe to the real thing here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&quot;caps&quot;&gt;This week →&lt;/strong&gt; Positive sum worlds: remaking public goods ⊗ Everyone should decide how their digital data are used — not just tech companies ⊗ Lithium landscapes ⊗ The REALIST stack ⊗ Turn it all off ⊗ First you make the maps&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&quot;caps&quot;&gt;A year ago →&lt;/strong&gt; The most clicked article in &lt;a href=&quot;https://sentiers.media/tolentino-on-the-discipline-of-hope-liminal-space-artificial-intelligence-shifts-power-no-134/&quot;&gt;issue No.134&lt;/a&gt; was &lt;a href=&quot;https://www.interviewmagazine.com/culture/ask-a-sane-person-jia-tolentino-book-2020-hope&quot;&gt;Ask a Sane Person: Jia Tolentino on Practicing the Discipline of Hope&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,20 @@
+<!-- https://www.pborenstein.com/posts/categories/ -->
+{% for featured in collections.issueNos %}
+  {% if featured.data.categories == thisissue %}
+    <div class="one-featured">
+      {% if featured.data.source|length %}
+        <h2><a href="{{ featured.data.source }}" target="_blank">{{ featured.data.title }}</a></h2>
+      {% else %}
+        <h2>{{ featured.data.title }}</h2>
+      {% endif %}
+      <div class="note-links">
+      {% if featured.data.source|length %}
+        <a href="{{ featured.data.source }}" target="_blank" class="link-source"><i>⊛</i>&nbsp;Source article</a>
+      {% endif %}
+        <a href="/{{ featured.data.permalink }}" class="link-note"><i>⊕</i>&nbsp;Full note</a>
+      </div>
+
+      {{ featured.templateContent | safe }}
+    </div>
+  {% endif %}
+{% endfor %}

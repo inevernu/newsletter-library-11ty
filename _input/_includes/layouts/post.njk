@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+{% set navPages = collections.issues | eleventyNavigation %}
+
+<article>
+	<p class="pre-title"><strong class="caps">Note</strong> &mdash; {{ page.date | mypostDate }}</p>	
+	<h1 class="page-title">{{ title }}</h1>
+
+	<div class="entry-content">
+	{% if categories|length %}
+		<p class="from-issue">Seen in &rarr;
+		{%- for entry in navPages %}
+			{% if entry.key == categories[0] %}
+		    <a href="{{ entry.url | url }}">{{ entry.key }}</a>
+			{% endif %}
+		{%- endfor %}
+		</p>
+	{% endif %}
+
+	{% if source|length %}
+		<p class="source">Source &rarr; <a href="{{ source }}" target="_top">{{ source | truncate(55) | replace("https://", "") | replace("http://", "") | replace("www.", "") }}</a></p>
+	{% endif %}
+
+		{{ content | safe }}
+
+		{# Calls up Obsidian (https://obsidian.md) to edit the same file. Define the vault in _data/metadata.json #}
+		{% if env.currentMode == 'DEV' %}
+			<p><a href="{{ metadata.obsidian }}&file={{ permalink | replace('notes/', '')}}" class="button">Edit this note</a></p>
+		{% endif %}
+
+		<div class="post-tags">
+			{% for tag in tags -%}
+				{% if tag != "posts" %}
+		    <a href="/tags/{{ tag }}">{{ tag | replace("_", " ") }}</a>
+				{% endif %}
+		  {% endfor -%}
+		</div>
+	</div><!-- /entry-content -->
+
+	{% include "components/backlinks.njk" %}
+
+</article>

@@ -1,0 +1,66 @@
+<!doctype html />
+<html lang="en" {% if env.currentMode == 'DEV' %} class="dev"{% endif %} />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ metadata.description or excerpt }}" />
+    <link rel="icon" type="image/png" sizes="180x180" href="">
+
+    <link rel="canonical" href="{{ metadata.url }}{{ page.url }}" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Basic SEO / social media card metatags. -->
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ excerpt or metadata.description }}" />
+    <meta property="og:image" content="{{ metadata.url }}/assets/images/{{ issueimage or metadata.image }}" />
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}" />
+    <meta property="og:author" content="{{ metadata.author.name }}" />
+    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="twitter:site" content="{{ metadata.author.twitter }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content="{{ imagesourcettl }}">
+
+    <title>{% if env.currentMode == 'DEV' %}[DEV] {% endif %}{{ title or metadata.title }}</title>
+
+    <!-- If you have code you need to include in the head only when sending to production, you can do that here. For example analytics code. -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css?ver=1.1' | url }}" />
+
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}" />
+  {% if env.currentMode == 'PROD' %}
+    <!--  -->
+  {% endif %}
+  </head>
+
+  <body{% if where == "home" %} id="home"{% endif %} class="{% if templateClass %}{{ templateClass }}{% endif %}">
+    <header>
+      <a href="{{ '/' | url }}" alt="{{ metadata.title }}"><img src="/assets/images/logo.png" width="50" height="50" /></a>
+
+      <nav><!-- In my own site I used the navigation Eleventy plugin to list the issues and determine which notes belongs "under" which issues, you could use it for your main navigation of course.  -->
+      {% if env.currentMode == 'DEV' %}
+        <a href="/tests/">Admin(ish)</a>
+      {% endif %}
+        <a href="/newsletter/">Newsletter</a>
+        <a href="/library/">Notes & Writings</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main><!-- /site-content -->
+
+    <footer>
+      {% include "components/search.njk" %}
+
+      <p>All original content <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons licence</a> (CC BY-SA 4.0)..</p>
+    </footer>
+
+    <!-- Current page: {{ page.url | url }} -->
+
+{% if env.currentMode == 'PROD' %}
+    <!-- If you have code you need to include in the footer only when sending to production, you can do that here. For example analytics code. -->
+{% endif %}
+
+  </body>
+</html>

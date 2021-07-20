@@ -1,0 +1,39 @@
+{
+  "name": "newsletter-library-11ty",
+  "version": "0.1",
+  "description": "A theme to turn a newsletter archive into a library / digital garden.",
+  "scripts": {
+    "debug": "DEBUG=* gulp & npx @11ty/eleventy",
+    "dev": "gulp & npx @11ty/eleventy --serve",
+    "build": "gulp & npx @11ty/eleventy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.0",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "luxon": "^1.25.0",
+    "markdown-it": "^9.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-attrs": "^4.0.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-image-figures": "^1.0.1",
+    "postcss": "^8.2.10",
+    "title-case": "^3.0.3"
+  },
+  "dependencies": {
+    "eleventy-plugin-purgecss": "^0.1.1",
+    "eleventy-plugin-youtube-embed": "^1.6.3",
+    "markdown-it-image-figures": "^1.0.1",
+    "node-sass": "^6.0.1",
+    "dotenv": "^8.2.0"
+  }
+}

@@ -1,0 +1,14 @@
+---
+permalink: /tags/
+layout: flex
+---
+<h1>Every tag with more than 3 occurences</h1>
+
+<div class="post-tags">
+{% for tag in collections.tagList %}
+	{% if collections[tag].length > 3 %}
+	  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+	  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | replace("_", " ") }} <small>({{ collections[tag].length }})</small></a>
+	{% endif %}
+{% endfor %}
+</div><!-- /post-tags -->

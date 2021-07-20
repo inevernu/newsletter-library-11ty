@@ -1,0 +1,32 @@
+{% if templateClass == 'tmpl-issue' %}
+	{% set preTitle %}Newsletter <strong>{{ thisissue | replace("No", "No.")}}</strong> &mdash; {{ date | mypostDate }}{% endset %}
+{% elseif templateClass == 'tmpl-dispatch' %}
+	{% set preTitle %}Dispatch {{ thisissue }} &mdash; {{ date | mypostDate }}{% endset %}
+{% else %}
+	{% set preTitle %}Article &mdash; {{ date | mypostDate }}{% endset %}
+{% endif %}
+
+	{% if imageformat == 'h' %}
+		<p class="pre-title">{{ preTitle | safe }}</p>
+		<h1 class="page-title h">{{ title }}</h1>
+
+		<figure class="horiz">
+			<img src="/assets/images/{{ issueimage }}" align="right" />
+			{% if imagesource != '' %}
+				<figcaption><a href="{{ imagesource }}">{{ imagesourcettl }}</a></figcaption>
+			{% endif %}
+		</figure>
+	{% elseif  imageformat == 'v' %}
+		<figure class="vert">
+			<img src="/assets/images/{{ issueimage }}" />
+			{% if imagesource != '' %}
+				<figcaption><a href="{{ imagesource }}">{{ imagesourcettl }}</a></figcaption>
+			{% endif %}
+		</figure>
+
+		<p class="pre-title v">{{ preTitle | safe }}</p>
+		<h1 class="page-title">{{ title }}</h1>
+	{% else %}
+		<p class="pre-title">{{ preTitle | safe }}</p>
+		<h1 class="page-title">{{ title }}</h1>
+	{% endif %}

@@ -1,0 +1,8 @@
+---
+title: All notes in one page
+permalink: /all-notes/
+pageformat: 'wide'
+layout: page
+---
+{% set postslist = collections.posts | head(-500) %}
+{% include "components/postslist.njk" %}

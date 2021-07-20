@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-issue
+---
+<article>
+	{% include "components/entry-header.njk" %}
+
+  <div class="entry-content {% if imagesource == '' %}no-margin{% endif %}">
+		{{ content | safe }}
+  </div><!-- /entry-content -->
+
+  {% include "components/listfeatured.njk" %}
+
+	<div>
+		<!-- Backlinks -->
+  	{% include "components/backlinks.njk" %}
+  </div>
+
+  <nav class="post-navigation" role="navigation">
+    <div class="nav-links">
+		  {%- set previousPost = collections.issues | getPreviousCollectionItem(page) %}
+      {%- if previousPost %}
+      <div class="nav-previous">
+        <a href="{{ previousPost.url | url }}" alt="{{ previousPost.data.title }}" rel="prev"><span class="arrow">&larr;</span>
+          <span class="post-title">{{ previousPost.data.title }}</span>
+        </a>
+      </div>
+			{% endif %}
+
+	  	{%- set nextPost = collections.issues | getNextCollectionItem(page) %}
+	  	{%- if nextPost %}
+      <div class="nav-next">
+        <a href="{{ nextPost.url | url }}" alt="{{ nextPost.data.title }}" rel="next"><span class="arrow">&rarr;</span>
+          <span class="post-title">{{ nextPost.data.title }}</span>
+        </a>
+      </div>
+			{% endif %}
+    </div>
+  </nav>
+
+</article>

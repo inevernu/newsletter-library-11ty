@@ -1,0 +1,20 @@
+---
+title: Notes & Writings
+permalink: /library/
+pageintro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+layout: page
+---
+<h3>Notes</h3>
+
+{% set postslist = collections.posts | head(-20) %}
+{% include "components/postslist-simple.njk" %}
+
+<p><a href="/notes/1/">Keep browsing the notes &rarr;</a></p>
+
+<hr />
+
+<h3>Articles</h3>
+{% set postslist = collections.articles | head(-3) %}
+{% include "components/postslist-simple.njk" %}
+
+<p><a href="/articles/">See all the articles &rarr;</a></p>

@@ -1,0 +1,23 @@
+{
+  "title": "Newsletter library",
+  "url": "https://yourdomain.com",
+  "obsidian": "obsidian://open?vault=posts",
+  "description": "A theme to turn a newsletter archive into a library / digital garden.",
+  "image": "jonas-verstuyft-352713-unsplash-small.jpg",
+  "feed": {
+    "subtitle": "Newsletter archive library",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://yourdomain.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://yourdomain.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Your Name",
+    "twitter": "yourtwitter",
+    "email": "you@yourdomain.com/",
+    "url": "https://yourdomain.com/about-you/"
+  }
+}

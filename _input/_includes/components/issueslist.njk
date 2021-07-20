@@ -1,0 +1,33 @@
+{% set cursor = 1 %}
+{% for issue in issueslist | reverse %}
+
+{% if cursor == 1 %}
+<div class="entry-header featured">
+	{% if issue.data.imageformat == 'h' %}
+		<figure class="horiz"><a href="{{ issue.url | url }}"><img src="/assets/images/{{ issue.data.issueimage }}" align="right" /></a></figure>
+		<p class="pre-title h"><span class="highlight">Latest</span> <strong>{{ issue.data.thisissue | replace("No", "No.")}}</strong> &mdash; {{ issue.date | mypostDate }}</p>
+		<h2 class="page-title h"><a href="{{ issue.url | url }}">{{ issue.data.title }}</a></h2>
+
+		<p class="the-excerpt h">{{ issue.data.excerpt }}</p>
+	{% else %}
+		<figure class="vert"><a href="{{ issue.url | url }}"><img src="/assets/images/{{ issue.data.issueimage }}" /></a></figure>
+		<div class="featured-inner">
+			<p class="pre-title v"><span class="highlight">Latest</span> <strong>{{ issue.data.thisissue | replace("No", "No.")}}</strong> &mdash; {{ issue.date | mypostDate }}</p>
+			<h2 class="page-title"><a href="{{ issue.url | url }}">{{ issue.data.title }}</a></h2>
+			<div class="the-excerpt">{{ issue.data.excerpt }}&nbsp;&nbsp;<a href="{{ article.url | url }}">Keep reading &rarr;</a></div>
+		</div>
+	{% endif %}
+</div>
+<!-- Open entry-content to narrow the display of the rest of the issues. -->
+<div class="entry-content">
+{% else %}
+	<div class="one-item">
+	  <p class="pre-title"><strong>{{ issue.data.thisissue | replace("No", "No.") }}</strong> &mdash; {{ issue.date | mypostDate }}</p>
+	  <h3 class="item-title"><a href="{{ issue.url | url }}">{{ issue.data.title }}</a></h3>
+	  <!-- <div class="issueslist"><img src="/images/{{ issue.data.issueimage }}" class="img-responsive" /></div> -->
+	  <div class="the-excerpt">{{ issue.data.excerpt }}&nbsp;&nbsp;<a href="{{ article.url | url }}">Keep reading &rarr;</a></div>
+	</div>
+{% endif %}
+{% set cursor = cursor + 1 %}
+{% endfor %}
+</div><!-- /entry-content -->
