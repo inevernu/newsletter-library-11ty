@@ -37,9 +37,6 @@
       <a href="{{ '/' | url }}" alt="{{ metadata.title }}"><img src="/assets/images/logo.png" width="50" height="50" /></a>
 
       <nav><!-- In my own site I used the navigation Eleventy plugin to list the issues and determine which notes belongs "under" which issues, you could use it for your main navigation of course.  -->
-      {% if env.currentMode == 'DEV' %}
-        <a href="/tests/">Admin(ish)</a>
-      {% endif %}
         <a href="/newsletter/">Newsletter</a>
         <a href="/library/">Notes & Writings</a>
         <a href="/about/">About</a>
